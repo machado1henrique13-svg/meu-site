@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 150 100% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 220 30% 15%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 210 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 150 100% 34%;
+
+    --radius: 0.625rem;
+
+    /* Vale brand tokens */
+    --vale-green: 150 100% 34%;
+    --vale-dark: 220 30% 12%;
+    --vale-navy: 220 40% 18%;
+    --vale-blue: 210 60% 50%;
+    --vale-orange: 35 92% 55%;
+    --vale-red: 0 72% 51%;
+    --vale-success: 145 63% 42%;
+    --vale-warning: 35 92% 55%;
+    --vale-danger: 0 72% 51%;
+    --vale-info: 210 60% 50%;
+
+    --sidebar-background: 220 30% 12%;
+    --sidebar-foreground: 220 10% 85%;
+    --sidebar-primary: 150 100% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 30% 18%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 150 100% 34%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .vale-gradient {
+    background: linear-gradient(135deg, hsl(var(--vale-dark)), hsl(var(--vale-navy)));
+  }
+
+  .vale-green-gradient {
+    background: linear-gradient(135deg, hsl(150 100% 34%), hsl(160 80% 28%));
+  }
+
+  .status-pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .status-pill-active {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+  .status-pill-progress {
+    @apply bg-blue-100 text-blue-700;
+  }
+  .status-pill-warning {
+    @apply bg-amber-100 text-amber-700;
+  }
+  .status-pill-danger {
+    @apply bg-red-100 text-red-700;
+  }
+  .status-pill-scheduled {
+    @apply bg-slate-100 text-slate-600;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl p-4 flex items-center gap-4 shadow-sm border border-border;
+  }
+
+  .kpi-card {
+    @apply bg-card rounded-xl p-5 shadow-sm border border-border;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+}
